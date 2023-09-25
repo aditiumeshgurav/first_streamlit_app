@@ -52,4 +52,7 @@ add_my_fruit = streamlit.text_input('What fruit you would you like add?','jackfr
 streamlit.write('The user entered ', add_my_fruit)
 my_data_rows.append(add_my_fruit)
 
+#This will not work correctly, but just go with it for now
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
 
