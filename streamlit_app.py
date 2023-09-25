@@ -89,3 +89,5 @@ try:
   streamlit.write('The user entered ', add_my_fruit)
   my_data_rows.append(add_my_fruit)
 
+my_cur.execute("insert into fruit_load_list values ('from streamlit')")
+
