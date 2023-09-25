@@ -89,4 +89,3 @@ try:
   streamlit.write('The user entered ', add_my_fruit)
   my_data_rows.append(add_my_fruit)
 
-#This will not work correctly, but just go with it for now
