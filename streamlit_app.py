@@ -63,21 +63,21 @@ try:
   streamlit.write('The user entered ', fruit_choice)
 
 # don't run anything past here while we troubleshoot
-streamlit.stop()
+  streamlit.stop()
 
 # my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 # my_cur = my_cnx.cursor()
 # my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 # my_data_rows = my_cur.fetchall() 
 
-# streamlit. header ("The fruit load list contains:")
+# streamlit.header ("The fruit load list contains:")
 # streamlit.dataframe (my_data_rows)
 
-streamlit. header ("The fruit load list contains:") 
+streamlit.header("The fruit load list contains:") 
 #Snowflake-related functions
 def get_fruit_ load_list():
-  with my_cnx. cursor () as my_cur:
-    my_cur. execute("select * from fruit load list")
+  with my_cnx.cursor() as my_cur:
+    my_cur.execute("select * from fruit load list")
     return my_cur.fetchall()
 # Add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
