@@ -75,21 +75,19 @@ try:
 
   streamlit.header("The fruit load list contains:") 
 #Snowflake-related functions
-def get_fruit_ load_list():
-  with my_cnx.cursor() as my_cur:
-    my_cur.execute("select * from fruit load list")
-    return my_cur.fetchall()
+  def get_fruit_ load_list():
+    with my_cnx.cursor() as my_cur:
+      my_cur.execute("select * from fruit load list")
+      return my_cur.fetchall()
 # Add a button to load the fruit
-if streamlit.button('Get Fruit Load List'):
-  my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake" 1)
-  my_data_rows = get_fruit_load_list()
-  streamlit.dataframe (my_data_rows)
+  if streamlit.button('Get Fruit Load List'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake" 1)
+    my_data_rows = get_fruit_load_list()
+    streamlit.dataframe (my_data_rows)
 
-add_my_fruit = streamlit.text_input('What fruit you would you like add?','jackfruit')
-streamlit.write('The user entered ', add_my_fruit)
-my_data_rows.append(add_my_fruit)
+  add_my_fruit = streamlit.text_input('What fruit you would you like add?','jackfruit')
+  streamlit.write('The user entered ', add_my_fruit)
+  my_data_rows.append(add_my_fruit)
 
 #This will not work correctly, but just go with it for now
-my_cur.execute("insert into fruit_load_list values ('from streamlit')")
-
-
+  my_cur.execute("insert into fruit_load_list values ('from streamlit')")
